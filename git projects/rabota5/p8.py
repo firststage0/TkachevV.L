@@ -6,4 +6,4 @@ while n != 0:
     if i != 0 and n == i:
         a += 1
     n = i
-print(a)
+print(a + 1)
