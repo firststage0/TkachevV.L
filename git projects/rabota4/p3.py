@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 s = 'Строка для задания'
 def sr(s):
-	a = (s[len(s) // 2:] + s[:len(s) // 2])
-	print(a)
+	f = s[len(s) // 2:] 
+	sec = s[:len(s) // 2]
+	print(f + sec)
 sr(s)
