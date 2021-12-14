@@ -1,8 +1,12 @@
 #-*- coding: utf-8 -*-
 n = int(input())
-x = 1
-for i in range(1, n + 1):
-	if n > x:
-		x = i ** 2
-		i = i + 1
+x = 0
+while x <= n:
+	
+		x = x ** 2
+
 		print(x)
+
+		x = x + 1
+
+		
