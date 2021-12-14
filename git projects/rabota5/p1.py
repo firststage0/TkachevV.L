@@ -2,17 +2,8 @@
 n = int(input())
 x = 0
 while x <= n:
-	
-
-		x = x ** 2
-
-		print(x)
-
-		x = x + 1
-
-		
-
 	x = x ** 2
 	print(x)
 	x = x + 1
+
 
