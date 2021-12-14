@@ -1,9 +1,9 @@
 #-*- coding: utf-8 -*-
-s = 'Опять строка с буквой f'
-def sr(s):
+son = 'Опять строка с буквой f'
+def venga(son):
 	
-	if s.count('f') == 1:
+	if son.count('f') == 1:
 		print('-1')
-	elif s.count('f') >= 2:
+	elif son.count('f') >= 2:
 		print('-2')
-sr(s)
+venga(son)
