@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 s = 'Строка для задания'
-def vengv(s):
+def venga(s):
 	print(s[2])
 	print(s[-2])
 	print(s[0:5])
@@ -10,4 +10,4 @@ def vengv(s):
 	print(s[::-1])
 	print(s[::-2])
 	print(len(s))
-sr(s)
+venga(s)
