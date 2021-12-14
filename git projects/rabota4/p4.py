@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
-s = 'Какая-то строка'
-def sr(s):
-	f = s[:s.find(' ')]
-	sc = s[s.find(' ') + 1:]
-	print(sc + ' ' + f)
-sr(s)
+sonik = 'Какая-то строка'
+def venga(sonik):
+	perv = sonik[:sonik.find(' ')]
+	twos = sonik[sonik.find(' ') + 1:]
+	print(twos + ' ' + perv)
+venga(s)
