@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
-s = 'Строка для задания'
-def sr(s):
-	f = s[len(s) // 2:] 
-	sec = s[:len(s) // 2]
-	print(f + sec)
-sr(s)
+son = 'Строка для задания'
+def venga(son):
+	per = son[len(son) // 2:] 
+	twos = son[:len(son) // 2]
+	print(per + twos)
+venga(son)
