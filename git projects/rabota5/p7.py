@@ -1,14 +1,15 @@
 #-*- coding: utf-8 -*-
 n = int(input())
-a = int(input())
+#a = int(input())
 b = 0
 maxb = 0
-while a != 0:
+while n != 0:
+	a = int(input())
 	if a > n:
 		b += 1
-	elif b > maxb:
-		maxb = b
+	else: 
+		if b > maxb:
+			maxb = b
 		b = 0
 	n = a
-	a = int(input())
-print(b)
+print(maxb)

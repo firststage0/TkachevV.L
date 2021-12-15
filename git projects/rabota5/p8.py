@@ -1,14 +1,14 @@
 #-*- coding: utf-8 -*-
-start = int(input('Введите любую цифру для начала: '))
-a = 1
+start = int(input('Введите цифру '))
+a = 0
 maxa = 0
 while start != 0:
-    vvod = int(input())
-    if vvod != 0 and start == vvod:
-        a += 1
-    elif a > maxa:
-    	maxa = a
-    	a = 1
-    start = vvod 	
-    
-print(maxa)
+    nn = int(input('Введите цифру '))
+    if start == nn:
+        maxa += a
+        maxa += 1
+        start = nn
+    else:
+        start = nn
+    a = 0
+print(maxa + 1)
