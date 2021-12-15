@@ -1,6 +1,4 @@
 #-*- coding: utf-8 -*-
-sonik = 'Строка для задания'
-def venga(sonik):
-	print(sonik)
-	print(sonik.count(' ') + 1)
-venga(sonik)
+def venga():
+	print(input('Введите любую фразу ').count(' ') + 1, str(" - кол-во введенных слов"))
+venga()
