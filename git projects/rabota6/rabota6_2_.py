@@ -37,10 +37,10 @@ def ven4():
     x = int(nameone4.get())
     y = int(nametwo4.get())
     i = 1
-    while x < y:
+    while x <= y:
         if x == y:
             break
-        x += x/10
+        x +=  x * 1.1
         i += 1
     res4.insert(INSERT, i)
     res4.insert(INSERT, " ")
@@ -78,25 +78,33 @@ def ven6():
     name6.delete(0, tk.END) 
 
 def ven7():
+    a = int(name7.get())
     n = int(resone7.get())
-    a = int(nameone7.get())
     b = int(restwo7.get())
+    maxb = int(res37.get())
     if a != 0:
         if a > n:
             b += 1
             restwo7.delete(0, tk.END)
-            restwo7.insert(INSERT, b)
+            restwo7.insert(0, b)
+        else:
+            if b > maxb:
+                res37.delete(0, tk.END)
+                res37.insert(0, b)
+            restwo7.delete(0, tk.END)
+            restwo7.insert(0, '0')
         n = a
         resone7.delete(0, tk.END)
         resone7.insert(0, n)
-    elif a < n:
-        nameone7.delete(0, tk.END)
-        res7.insert(INSERT, b)
+    else:
+        res7.delete(1.0, tk.END)
+        res7.insert(INSERT, maxb - 1)
         resone7.delete(0, tk.END)
-        resone7.insert(0, tk.END)
+        resone7.insert(INSERT, '0')
         restwo7.delete(0, tk.END)
-        restwo7.insert(0, tk.END)
-    name6.delete(0, tk.END)
+        restwo7.insert(0, '0')    
+    name7.delete(0, tk.END)
+
 
 def ven8():
     nn = int(name8.get())
@@ -109,7 +117,7 @@ def ven8():
             nametwo8.insert(0,amax)
             if amax > int(name38.get()):
                 name38.delete(0,'end')
-                name38.insert(0, amax)
+                name38.insert(0, amax + 1)
         else: 
             nameone8.delete(0,'end')
             nameone8.insert(0, nn)
@@ -126,7 +134,7 @@ def ven8():
         nametwo8.insert(0,"0")
         name38.delete (0,'end')
         name38.insert (0,'0')
-    name6.delete(0, tk.END)       
+    name8.delete(0, tk.END)       
 
 win = tk.Tk() # Главное окно
 win.config(bg="#CBB8D7")
@@ -255,25 +263,27 @@ nametwo6.insert(INSERT,'0')
 
 #7
 
-label = tk.Label(tab7, text="Нужно ввести число, нажать на кнопку.(При вводе 0 программа завершается)")
-label.grid(row = 0, column = 0)
+lb7 = Label(tab7, text="Нужно ввести число, нажать на кнопку.(При вводе 0 программа завершается) ").grid(row = 0, column = 0)
+name7 = Entry(tab7)
+name7.grid(row=1, column=0)
 
-nameone7 = tk.Entry(tab7)
-nameone7.grid(row = 1, column = 0)
+btn7 = Button(tab7, text=" Тык-тык ", command = ven7).grid(row = 1, column = 2)
 
-btn7 = tk.Button(tab7, text = "Тык-тык", command = ven7).grid(row = 1, column = 1)
-
-res7 = scrolledtext.ScrolledText(tab7, width = 30, height = 10)
+res7 = scrolledtext.ScrolledText(tab7, width=30, height=10)
 res7.grid(row = 3, column = 0)
-res7.insert(INSERT, 'Цепочка чисел ')
+res7.insert(INSERT, 'Кол-во цифр, которые больше предыдущего ')
 
-resone7 = tk.Entry(tab7)
-resone7.grid(row = 3, column = 1)
-resone7.insert(INSERT,' 0 ')
+resone7 = Entry(tab7)
+#resone7.grid(row = 3, column = 3)
+resone7.insert(INSERT, '0')
 
-restwo7 = tk.Entry(tab7)
-restwo7.grid(row = 4, column = 1)
-restwo7.insert(INSERT,' 0 ')
+restwo7 = Entry(tab7)
+#restwo7.grid(row = 4, column = 3)
+restwo7.insert (INSERT, '0')
+
+res37 = Entry(tab7)
+#res37.grid(row = 5, column = 3)
+res37.insert(INSERT, '0')
 
 
 #8
