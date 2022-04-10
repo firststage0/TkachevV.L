@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         int n = 0;
-        int s = 1;
         int[][] A = {
                 {2, 3, 1, 3, 1, 2},
                 {3, 1, -4, 6, 4, 2},
@@ -12,8 +11,10 @@ public class Main {
                 {2, 3, 1, 3, 1, 2},
                 {3, 1, 4, 6, 4, -2},
                 {6, 3, 5, 2, 8, 1}};
-        for(int i = 0; i < A.length; i++){
-            for(int j = 1; j < A.length; j++){
+        int s = A[0][1];
+
+       for(int j = 2; j < A.length; j++){
+            for(int i = 0; i < j - 1; i++){
                 if(A[i][j] > 0){
                     n += 1;
                     s *= A[i][j];
