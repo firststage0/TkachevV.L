@@ -3,6 +3,7 @@ module ru.vsuet.bank {
     requires javafx.fxml;
     requires java.sql;
     requires mysql.connector.java;
+    requires java.desktop;
 
 
     opens ru.vsuet.bank to javafx.fxml;

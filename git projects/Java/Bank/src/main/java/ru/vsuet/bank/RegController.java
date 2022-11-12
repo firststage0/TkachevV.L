@@ -1,18 +1,24 @@
 package ru.vsuet.bank;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class RegController{
+import java.io.IOException;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+
+
+public class RegController {
 
     @FXML
     private ResourceBundle resources;
@@ -27,6 +33,9 @@ public class RegController{
     private Button SignUpButton;
 
     @FXML
+    private Label UsernameAlreadyExists;
+
+    @FXML
     private TextField login_field;
 
     @FXML
@@ -38,7 +47,51 @@ public class RegController{
     @FXML
     void initialize() {
         SignUpButton.setOnAction(actionEvent -> {
+            //SignUpNewUser();
+           IsUserAlreadyExists();
+        });
+    }
 
+    private void SignUpNewUser() {
+        DBHandler dbHandler = new DBHandler();
+
+        String firstname = FirstNameField.getText();
+        String secondname = secondNameField.getText();
+        String username = login_field.getText();
+        String password = password_field.getText();
+
+        User user = new User(username, password, firstname, secondname);
+
+        dbHandler.signUpUser(user);
+    }
+
+    private void IsUserAlreadyExists(){
+
+
+        String username = login_field.getText();
+        int count = 0;
+        DBHandler dbHandler = new DBHandler();
+        String query = "SELECT * FROM " + Const.USERS_TABLE;
+        try {
+            Statement statement = dbHandler.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            System.out.println(count + " in try");
+            while(resultSet.next()){
+                String userSearch = resultSet.getString(2);
+                if(userSearch.equals(username)){
+                    count++;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if(count >= 1){
+            UsernameAlreadyExists.setText("Такой пользователь уже существует");
+
+        } else{
             SignUpNewUser();
 
             SignUpButton.getScene().getWindow().hide();
@@ -57,24 +110,7 @@ public class RegController{
             stage.setScene(new Scene(root));
             stage.show();
 
-
-        });
-
-
+        }
+        System.out.println(count + " after");
     }
-
-    private void SignUpNewUser() {
-        DBHandler dbHandler = new DBHandler();
-
-        String firstname = FirstNameField.getText();
-        String secondname = secondNameField.getText();
-        String loginField = login_field.getText();
-        String password = password_field.getText();
-
-        User user = new User(firstname, secondname, loginField, password);
-
-        dbHandler.signUpUser(user);
-
-    }
-
 }

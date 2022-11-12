@@ -1,14 +1,11 @@
 package ru.vsuet.bank;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBHandler extends Config{
-    Connection dbconnection;
-
+    private static Connection dbconnection;
+    /*private static Statement stmt;
+    private static ResultSet rs;*/
     public Connection getConnection()
             throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName + "?verifyServerCertificate=false" +
@@ -21,9 +18,10 @@ public class DBHandler extends Config{
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         dbconnection = DriverManager.getConnection(connectionString, dbUser, dbpassword);
-
+        //stmt = dbconnection.createStatement();
         return dbconnection;
     }
+
     public void signUpUser(User user){
         String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_USERNAME + "," + Const.USERS_PASSWORD +
             "," + Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + ")" + "VALUES(?,?,?,?)";
@@ -41,6 +39,7 @@ public class DBHandler extends Config{
             e.printStackTrace();
         }
     }
+
     public ResultSet getUser(User user){
         ResultSet resSet = null;
 
@@ -53,6 +52,7 @@ public class DBHandler extends Config{
             prSt.setString(2, user.getPassword());
 
             resSet = prSt.executeQuery();
+
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

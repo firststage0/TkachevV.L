@@ -11,6 +11,4 @@ public class Const {
     public static final String USERS_GENDER = "gender";
 
 
-
-
 }
