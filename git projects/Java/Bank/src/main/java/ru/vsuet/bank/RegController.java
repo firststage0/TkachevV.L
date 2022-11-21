@@ -17,7 +17,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-
 public class RegController {
 
     @FXML
@@ -47,28 +46,23 @@ public class RegController {
     @FXML
     void initialize() {
         SignUpButton.setOnAction(actionEvent -> {
-            //SignUpNewUser();
            IsUserAlreadyExists();
         });
     }
 
-    private void SignUpNewUser() {
+    private void SignUpNewUser(String firstname, String secondname, String username, String password) {
         DBHandler dbHandler = new DBHandler();
+        User user = new User(username, password, firstname, secondname);
+        dbHandler.signUpUser(user);
+    }
+
+    private void IsUserAlreadyExists(){
 
         String firstname = FirstNameField.getText();
         String secondname = secondNameField.getText();
         String username = login_field.getText();
         String password = password_field.getText();
 
-        User user = new User(username, password, firstname, secondname);
-
-        dbHandler.signUpUser(user);
-    }
-
-    private void IsUserAlreadyExists(){
-
-
-        String username = login_field.getText();
         int count = 0;
         DBHandler dbHandler = new DBHandler();
         String query = "SELECT * FROM " + Const.USERS_TABLE;
@@ -92,7 +86,7 @@ public class RegController {
             UsernameAlreadyExists.setText("Такой пользователь уже существует");
 
         } else{
-            SignUpNewUser();
+            SignUpNewUser(firstname, secondname, username, password);
 
             SignUpButton.getScene().getWindow().hide();
 
