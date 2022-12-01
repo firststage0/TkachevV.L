@@ -95,7 +95,6 @@ public class Controller {
         User user = new User();
         user.setUsername(loginText);
         user.setPassword(loginPassword);
-        //dbHandler.getUser(user);
 
         ResultSet result = functions.getUser(user);
 
