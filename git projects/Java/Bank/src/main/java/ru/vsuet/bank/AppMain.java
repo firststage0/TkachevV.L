@@ -1,10 +1,18 @@
 package ru.vsuet.bank;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class AppMain extends Controller{
 
@@ -12,17 +20,54 @@ public class AppMain extends Controller{
     private ResourceBundle resources;
 
     @FXML
-    private URL location;
+    private Button inHomeButton;
 
     @FXML
-    private Text UserAccountName;
+    private URL location;
+    @FXML
+    private ImageView HomeButton;
+    @FXML
+    private Text AppUserName;
+    @FXML
+    private Button createCheckButton;
 
     @FXML
     void initialize() {
 
-        String loginTab = loginText;
-       UserAccountName.setText(loginTab);
-        System.out.println(loginTab);
+        AppUserName.setText(loginText);
+        inHomeButton.setOnAction(actionEvent -> {
+            FXMLLoader loader = new FXMLLoader();
+            inHomeButton.getScene().getWindow().hide();
+            loader.setLocation(getClass().getResource("/ru/vsuet/bank/mainwindow.fxml"));
+
+            try{
+                loader.load();
+            }   catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        });
+
+        createCheckButton.setOnAction(actionEvent -> {
+            createCheckButton.getScene().getWindow().hide();
+            openNewScene();
+        });
     }
 
+    private void openNewScene() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/ru/vsuet/bank/createcheck.fxml"));
+        try{
+            loader.load();
+        }   catch (IOException e) {
+            e.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }

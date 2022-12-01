@@ -4,8 +4,6 @@ import java.sql.*;
 
 public class DBHandler extends Config{
     private static Connection dbconnection;
-    /*private static Statement stmt;
-    private static ResultSet rs;*/
     public Connection getConnection()
             throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName + "?verifyServerCertificate=false" +
@@ -18,14 +16,12 @@ public class DBHandler extends Config{
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         dbconnection = DriverManager.getConnection(connectionString, dbUser, dbpassword);
-        //stmt = dbconnection.createStatement();
         return dbconnection;
     }
 
     /*public void signUpUser(User user){
         String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_USERNAME + "," + Const.USERS_PASSWORD +
             "," + Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + ")" + "VALUES(?,?,?,?)";
-
 
         try{
             PreparedStatement prSt = getConnection().prepareStatement(insert);
@@ -38,9 +34,9 @@ public class DBHandler extends Config{
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
-    /*public ResultSet getUser(User user){
+    public ResultSet getUser(User user){
         ResultSet resSet = null;
 
         String select = "SELECT * FROM " + Const.USERS_TABLE + " WHERE " + Const.USERS_USERNAME + "=? AND " +
@@ -53,10 +49,12 @@ public class DBHandler extends Config{
 
             resSet = prSt.executeQuery();
 
+
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return resSet;
+
     }*/
 
 }

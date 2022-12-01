@@ -37,19 +37,21 @@ public class Controller {
     private PasswordField password_field;
 
     protected static String loginText;
-
     @FXML
     void initialize() {
+
         SignUpButton.setOnAction(actionEvent -> {
             loginText = login_field.getText().trim();
             String loginPassword = password_field.getText().trim();
+
             if(!loginText.equals("") && !password_field.equals("")){
                 loginUser(loginText, loginPassword);
-
             } else
                 System.out.println("Login and password is empty");
             RegisterButton.setOnAction(actionEvent1 -> {
+                RegisterButton.getScene().getWindow().hide();
                 openNewScene("/ru/vsuet/bank/registerwindow.fxml");
+
             });
         });
 
@@ -70,8 +72,8 @@ public class Controller {
             stage.show();
         });
     }
+
     private void openNewScene(String window) {
-        RegisterButton.getScene().getWindow().hide();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
@@ -89,7 +91,6 @@ public class Controller {
     }
 
     private void loginUser(String loginText, String loginPassword) {
-        //DBHandler dbHandler = new DBHandler();
         Functions functions = new Functions();
         User user = new User();
         user.setUsername(loginText);
@@ -109,7 +110,6 @@ public class Controller {
         }
         if(counter >= 1){
             openNewScene("/ru/vsuet/bank/app.fxml");
-
         } else{
             Shake userLoginAnim = new Shake(login_field);
             Shake userPasswordAnim = new Shake(password_field);
@@ -117,6 +117,5 @@ public class Controller {
             userPasswordAnim.PlayAnim();
         }
     }
-
 
 }

@@ -29,6 +29,8 @@ public class RegController {
     private TextField FirstNameField;
 
     @FXML
+    private Button inHomeButton;
+    @FXML
     private Button SignUpButton;
 
     @FXML
@@ -49,31 +51,29 @@ public class RegController {
            IsUserAlreadyExists();
         });
     }
-
-    private void SignUpNewUser(String firstname, String secondname, String username, String password) {
+    private void SignUpNewUser(String username, String password, String firstname, String secondname) {
         //DBHandler dbHandler = new DBHandler();
         Functions functions = new Functions();
         User user = new User(username, password, firstname, secondname);
+
         functions.signUpUser(user);
     }
 
     private void IsUserAlreadyExists(){
-        Functions functions = new Functions();
+
+        String username = login_field.getText();
         String firstname = FirstNameField.getText();
         String secondname = secondNameField.getText();
-        String username = login_field.getText();
         String password = password_field.getText();
-
         int count = 0;
-//        DBHandler dbHandler = new DBHandler();
+        DBHandler dbHandler = new DBHandler();
         String query = "SELECT * FROM " + Const.USERS_TABLE;
         try {
-
-            Statement statement = functions.dbHandler.getConnection().createStatement();
+            Statement statement = dbHandler.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             System.out.println(count + " in try");
             while(resultSet.next()){
-                String userSearch = resultSet.getString(2);
+                String userSearch = resultSet.getString("username");
                 if(userSearch.equals(username)){
                     count++;
                 }
@@ -88,7 +88,7 @@ public class RegController {
             UsernameAlreadyExists.setText("Такой пользователь уже существует");
 
         } else{
-            SignUpNewUser(firstname, secondname, username, password);
+            SignUpNewUser(username, firstname, secondname, password);
 
             SignUpButton.getScene().getWindow().hide();
 
@@ -107,6 +107,6 @@ public class RegController {
             stage.show();
 
         }
-        System.out.println(count + " after");
+        System.out.println(count + " check after");
     }
 }
