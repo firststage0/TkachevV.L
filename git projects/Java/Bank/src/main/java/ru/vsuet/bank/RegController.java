@@ -51,23 +51,25 @@ public class RegController {
     }
 
     private void SignUpNewUser(String firstname, String secondname, String username, String password) {
-        DBHandler dbHandler = new DBHandler();
+        //DBHandler dbHandler = new DBHandler();
+        Functions functions = new Functions();
         User user = new User(username, password, firstname, secondname);
-        dbHandler.signUpUser(user);
+        functions.signUpUser(user);
     }
 
     private void IsUserAlreadyExists(){
-
+        Functions functions = new Functions();
         String firstname = FirstNameField.getText();
         String secondname = secondNameField.getText();
         String username = login_field.getText();
         String password = password_field.getText();
 
         int count = 0;
-        DBHandler dbHandler = new DBHandler();
+//        DBHandler dbHandler = new DBHandler();
         String query = "SELECT * FROM " + Const.USERS_TABLE;
         try {
-            Statement statement = dbHandler.getConnection().createStatement();
+
+            Statement statement = functions.dbHandler.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             System.out.println(count + " in try");
             while(resultSet.next()){

@@ -22,7 +22,7 @@ public class DBHandler extends Config{
         return dbconnection;
     }
 
-    public void signUpUser(User user){
+    /*public void signUpUser(User user){
         String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_USERNAME + "," + Const.USERS_PASSWORD +
             "," + Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + ")" + "VALUES(?,?,?,?)";
 
@@ -38,9 +38,9 @@ public class DBHandler extends Config{
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    public ResultSet getUser(User user){
+    /*public ResultSet getUser(User user){
         ResultSet resSet = null;
 
         String select = "SELECT * FROM " + Const.USERS_TABLE + " WHERE " + Const.USERS_USERNAME + "=? AND " +
@@ -57,6 +57,6 @@ public class DBHandler extends Config{
             e.printStackTrace();
         }
         return resSet;
-    }
+    }*/
 
 }

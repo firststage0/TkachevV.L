@@ -89,13 +89,14 @@ public class Controller {
     }
 
     private void loginUser(String loginText, String loginPassword) {
-        DBHandler dbHandler = new DBHandler();
+        //DBHandler dbHandler = new DBHandler();
+        Functions functions = new Functions();
         User user = new User();
         user.setUsername(loginText);
         user.setPassword(loginPassword);
         //dbHandler.getUser(user);
 
-        ResultSet result = dbHandler.getUser(user);
+        ResultSet result = functions.getUser(user);
 
         int counter = 0;
 
