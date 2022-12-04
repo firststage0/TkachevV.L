@@ -2,19 +2,14 @@ package ru.vsuet.bank;
 
 import assets.Shake;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import service.ControllerService;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 
 public class Controller {
 
@@ -25,96 +20,46 @@ public class Controller {
     private URL location;
 
     @FXML
-    private Button RegisterButton;
+    private Button registerButton;
 
     @FXML
-    private Button SignUpButton;
+    private Button signUpButton;
 
     @FXML
     private TextField login_field;
 
     @FXML
     private PasswordField password_field;
-
+    protected static boolean checkUser;
     protected static String loginText;
+    protected static String loginPassword;
     @FXML
     void initialize() {
 
-        SignUpButton.setOnAction(actionEvent -> {
+        signUpButton.setOnAction(actionEvent -> {
             loginText = login_field.getText().trim();
-            String loginPassword = password_field.getText().trim();
-
-            if(!loginText.equals("") && !password_field.equals("")){
-                loginUser(loginText, loginPassword);
-            } else
-                System.out.println("Login and password is empty");
-            RegisterButton.setOnAction(actionEvent1 -> {
-                RegisterButton.getScene().getWindow().hide();
-                openNewScene("/ru/vsuet/bank/registerwindow.fxml");
-
-            });
+            loginPassword = password_field.getText().trim();
+            checkUser = ControllerService.CheckUser(loginText, loginPassword);
+            if(checkUser){
+                ControllerService.loginUser(loginText, loginPassword);
+                signUpButton.getScene().getWindow().hide();
+                ControllerService.openNewScene("/ru/vsuet/bank/app.fxml");
+            } else {
+                Anim();
+            }
         });
 
-        RegisterButton.setOnAction(actionEvent -> {
-            RegisterButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/ru/vsuet/bank/registerwindow.fxml"));
-
-            try {
-                loader.load();
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
+        registerButton.setOnAction(actionEvent1 -> {
+            signUpButton.getScene().getWindow().hide();
+            ControllerService.openNewScene("/ru/vsuet/bank/registerwindow.fxml");
         });
     }
 
-    private void openNewScene(String window) {
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(window));
-
-        try{
-            loader.load();
-        }   catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
-    private void loginUser(String loginText, String loginPassword) {
-        Functions functions = new Functions();
-        User user = new User();
-        user.setUsername(loginText);
-        user.setPassword(loginPassword);
-
-        ResultSet result = functions.getUser(user);
-
-        int counter = 0;
-
-        try {
-            while(result.next()) {
-                counter++;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        if(counter >= 1){
-            openNewScene("/ru/vsuet/bank/app.fxml");
-        } else{
-            Shake userLoginAnim = new Shake(login_field);
-            Shake userPasswordAnim = new Shake(password_field);
-            userLoginAnim.PlayAnim();
-            userPasswordAnim.PlayAnim();
-        }
+    public void Anim(){
+        Shake userLoginAnim = new Shake(login_field);
+        Shake userPasswordAnim = new Shake(password_field);
+        userLoginAnim.PlayAnim();
+        userPasswordAnim.PlayAnim();
     }
 
 }

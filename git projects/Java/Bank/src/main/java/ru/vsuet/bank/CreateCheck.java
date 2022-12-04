@@ -2,8 +2,11 @@ package ru.vsuet.bank;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import repository.DBHandler;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,26 +23,44 @@ public class CreateCheck {
     @FXML
     private Button createCheckButton;
 
-    private String userId;
+    @FXML
+    private TextField checkNumber;
+
+    private Long userId;
+    private String Search;
 
     @FXML
     void initialize() {
         createCheckButton.setOnAction(actionEvent -> {
+            String checkName = checkNumber.getText().trim();
             DBHandler dbHandler = new DBHandler();
             String query = "select * from " + Const.USERS_TABLE;
             try {
                 Statement statement = dbHandler.getConnection().createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 while(resultSet.next()){
-                    userId = resultSet.getString("idusers");
+                    Search = resultSet.getString("username");
+                    if(Search.equals(AppMain.loginText)){
+                        userId = resultSet.getLong("idusers");
+                    }
                 }
-            } catch (ClassNotFoundException e) {
+            } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
-            } catch (SQLException e) {
+            }
+            String insert = "insert into accounts(idaccounts, checkNumber, money) values(?,?,?)";
+            try {
+                PreparedStatement prst = dbHandler.getConnection().prepareStatement(insert);
+                prst.setString(1, String.valueOf(userId));
+                prst.setString(2, checkName);
+                prst.setString(3, String.valueOf(0));
+
+                prst.executeUpdate();
+            } catch (ClassNotFoundException | SQLException e){
                 e.printStackTrace();
             }
             System.out.println(userId);
         });
     }
+
 
 }

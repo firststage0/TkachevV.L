@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="200.0" prefWidth="299.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vsuet.bank.CreateCheck">
+<AnchorPane prefHeight="200.0" prefWidth="299.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vsuet.bank.CreateCheck">
    <children>
-      <TextField layoutX="74.0" layoutY="74.0" promptText="Введите номер счета" />
+      <TextField fx:id="checkNumber" layoutX="74.0" layoutY="74.0" promptText="Введите номер счета" />
       <Label layoutX="82.0" layoutY="30.0" text="Создание счета" textFill="#b913a9" underline="true">
          <font>
             <Font size="19.0" />

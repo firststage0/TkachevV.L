@@ -1,22 +1,14 @@
-package ru.vsuet.bank;
+package repository;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import ru.vsuet.bank.Const;
+import ru.vsuet.bank.User;
 
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Functions {
     DBHandler dbHandler = new DBHandler();
-
-    /*public DBHandler getDbHandler() {
-        return dbHandler;
-    }*/
-
     public ResultSet getUser(User user){
         ResultSet resSet = null;
 

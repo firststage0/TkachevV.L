@@ -1,8 +1,10 @@
-package ru.vsuet.bank;
+package repository;
+
+import ru.vsuet.bank.Config;
 
 import java.sql.*;
 
-public class DBHandler extends Config{
+public class DBHandler extends Config {
     private static Connection dbconnection;
     public Connection getConnection()
             throws ClassNotFoundException, SQLException {
