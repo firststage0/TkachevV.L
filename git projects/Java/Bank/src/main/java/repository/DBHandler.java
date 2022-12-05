@@ -1,6 +1,6 @@
 package repository;
 
-import ru.vsuet.bank.Config;
+import settings.Config;
 
 import java.sql.*;
 

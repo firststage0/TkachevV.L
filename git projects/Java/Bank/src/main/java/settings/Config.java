@@ -1,4 +1,4 @@
-package ru.vsuet.bank;
+package settings;
 
 public class Config {
     protected String dbPort = "3306";

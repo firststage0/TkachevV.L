@@ -11,4 +11,6 @@ module ru.vsuet.bank {
     exports ru.vsuet.bank;
     exports repository;
     opens repository to javafx.fxml;
+    exports settings;
+    opens settings to javafx.fxml;
 }

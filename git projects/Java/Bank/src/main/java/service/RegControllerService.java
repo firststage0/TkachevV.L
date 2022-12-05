@@ -2,7 +2,7 @@ package service;
 
 import repository.DBHandler;
 import repository.Functions;
-import ru.vsuet.bank.Const;
+import settings.Const;
 import ru.vsuet.bank.User;
 
 import java.sql.ResultSet;

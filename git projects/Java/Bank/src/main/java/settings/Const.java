@@ -1,10 +1,10 @@
-package ru.vsuet.bank;
+package settings;
 
 public class Const {
     //Accounts table
-    public static final String CHECK_TABLE = "check";
-    public static final String CHECK_USERNAME = "Username";
-    public static final String CHECK_CHEK = "chek";
+    public static final String ACCOUNTS_TABLE = "accounts";
+    public static final String ACCOUNTS_ID = "idaccounts";
+    public static final String ACCOUNTS_CHEK = "chekNumber";
     public static final String ACCOUNTS_MONEY = "money";
     //Users table
     public static final String USERS_TABLE = "users";

@@ -1,6 +1,6 @@
 package repository;
 
-import ru.vsuet.bank.Const;
+import settings.Const;
 import ru.vsuet.bank.User;
 
 import java.sql.PreparedStatement;
