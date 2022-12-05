@@ -6,9 +6,12 @@ import ru.vsuet.bank.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Functions {
-    DBHandler dbHandler = new DBHandler();
+
+    public DBHandler dbHandler = new DBHandler();
+
     public ResultSet getUser(User user){
         ResultSet resSet = null;
 
@@ -46,4 +49,22 @@ public class Functions {
         }
     }
 
+    public long findById(String query, String name, String id, String loginText){
+        String Search;
+        long findid = 0;
+        try {
+            Statement statement = dbHandler.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()){
+                Search = resultSet.getString(name);
+                if(Search.equals(loginText)){
+                    findid = resultSet.getLong(id);
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return findid;
+    }
+    
 }

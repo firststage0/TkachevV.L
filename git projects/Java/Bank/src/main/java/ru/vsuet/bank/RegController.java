@@ -47,9 +47,9 @@ public class RegController extends RegControllerService {
             String firstname = firstNameField.getText();
             String secondname = secondNameField.getText();
             String password = password_field.getText();
-            int count = IsUserAlreadyExists(username);
+            int count = isUserAlreadyExists(username);
             if (count == 0){
-                RegControllerService.SignUpNewUser(username, password, firstname, secondname);
+                RegControllerService.signUpNewUser(username, password, firstname, secondname);
                 signUpButton.getScene().getWindow().hide();
                 ControllerService.openNewScene("/ru/vsuet/bank/mainwindow.fxml");
             } else {

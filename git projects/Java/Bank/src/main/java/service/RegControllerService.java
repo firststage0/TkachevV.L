@@ -11,14 +11,14 @@ import java.sql.Statement;
 
 public class RegControllerService {
 
-    protected static void SignUpNewUser(String username, String password, String firstname, String secondname) {
+    protected static void signUpNewUser(String username, String password, String firstname, String secondname) {
         Functions functions = new Functions();
         User user = new User(username, password, firstname, secondname);
 
         functions.signUpUser(user);
     }
 
-    protected int IsUserAlreadyExists(String username){
+    protected int isUserAlreadyExists(String username){
 
         int count = 0;
         DBHandler dbHandler = new DBHandler();

@@ -1,6 +1,6 @@
 package service;
 
-import repository.DBHandler;
+import repository.Functions;
 import settings.Const;
 
 import java.sql.PreparedStatement;
@@ -12,25 +12,16 @@ public class CreateCheckService{
     private static Long userId;
     private static String Search;
 
-    protected static void CreateCheck(String checkName, String loginText){
-        DBHandler dbHandler = new DBHandler();
+    protected static void createCheck(String checkName, String loginText){
+        Functions functions = new Functions();
+        String name = "username";
+        String id = "idusers";
         String query = "select * from " + Const.USERS_TABLE;
-        try {
-            Statement statement = dbHandler.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
-                Search = resultSet.getString("username");
-                if(Search.equals(loginText)){
-                    userId = resultSet.getLong("idusers");
-                }
-            }
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
+        userId = functions.findById(query, name, id, loginText);
         String insert = "insert into " + Const.ACCOUNTS_TABLE + "(" + Const.ACCOUNTS_ID + "," + Const.ACCOUNTS_CHEK +
                 "," + Const.ACCOUNTS_MONEY + ") values(?,?,?)";
         try {
-            PreparedStatement prst = dbHandler.getConnection().prepareStatement(insert);
+            PreparedStatement prst = functions.dbHandler.getConnection().prepareStatement(insert);
             prst.setString(1, String.valueOf(userId));
             prst.setString(2, checkName);
             prst.setString(3, String.valueOf(0));
@@ -40,5 +31,25 @@ public class CreateCheckService{
             e.printStackTrace();
         }
         System.out.println(userId);
+    }
+
+    protected static int isCheckExist(String checkName){
+        int count = 0;
+        Functions functions = new Functions();
+        String query = "SELECT * FROM " + Const.ACCOUNTS_TABLE;
+        try {
+            Statement statement = functions.dbHandler.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            System.out.println(count + " in try");
+            while(resultSet.next()){
+                String checkSearch = resultSet.getString("chekNumber");
+                if(checkSearch.equals(checkName)){
+                    count++;
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 }

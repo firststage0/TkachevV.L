@@ -39,7 +39,7 @@ public class Controller {
         signUpButton.setOnAction(actionEvent -> {
             loginText = login_field.getText().trim();
             loginPassword = password_field.getText().trim();
-            checkUser = ControllerService.CheckUser(loginText, loginPassword);
+            checkUser = ControllerService.checkUser(loginText, loginPassword);
             if(checkUser){
                 ControllerService.loginUser(loginText, loginPassword);
                 signUpButton.getScene().getWindow().hide();

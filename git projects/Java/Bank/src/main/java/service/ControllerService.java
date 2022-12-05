@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class ControllerService extends Controller {
 
-    public static boolean CheckUser(String loginText, String loginPassword) {
+    public static boolean checkUser(String loginText, String loginPassword) {
         if (!loginText.equals("") && !loginPassword.equals("")) {
             int counter = loginUser(loginText, loginPassword);
             if (counter > 0) {
