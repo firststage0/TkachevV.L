@@ -56,6 +56,10 @@ public class AppMain extends Controller{
             ControllerService.openNewScene("/ru/vsuet/bank/createcheck.fxml");
         });
 
+        deleteCheckButton.setOnAction(actionEvent -> {
+            ControllerService.openNewScene("/ru/vsuet/bank/deletecheck.fxml");
+        });
+
     }
 
 }
