@@ -28,7 +28,7 @@ class Controller {
     }
 
     static void questionOne(){
-        System.out.println("Последний результат: " + globalResult);
+        System.out.println("РџРѕСЃР»РµРґРЅРёР№ СЂРµР·СѓР»СЊС‚Р°С‚: " + globalResult);
     }
 
     static void questionTwo(){
@@ -36,20 +36,9 @@ class Controller {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("\t");
-        System.out.println("Введите уравнение");
+        System.out.println("Р’РІРµРґРёС‚Рµ СѓСЂР°РІРЅРµРЅРёРµ");
         String number = scanner.nextLine();
 
-        /*Float[] numbers = numbersForCalc(number);
-        String[] operands = operandsForCalc(number);
-
-        for (int i = 0; i < numbers.length - 1; i++) {
-            float first = numbers[i];
-            float second = numbers[i+1];
-            String operand = operands[i];
-            result = forSwitch(first, second, operand);
-            numbers[i+1] = result;
-
-        }*/
         result = finalResult(number);
 
         globalResult = result;
