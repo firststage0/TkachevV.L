@@ -7,19 +7,19 @@ public class FurnitureFactory implements IFurnitureFactory{
 
         switch (furnitureTypes){
             case BED -> {
-                System.out.println("Кровать собрана");
+                System.out.println("РљСЂРѕРІР°С‚СЊ СЃРѕР±СЂР°РЅР°");
                 return new Bed();
             }
             case CHAIR -> {
-                System.out.println("Стул собран");
+                System.out.println("РЎС‚СѓР» СЃРѕР±СЂР°РЅ");
                 return new Chair();
             }
             case TABLE -> {
-                System.out.println("Стол собран");
+                System.out.println("РЎС‚РѕР» СЃРѕР±СЂР°РЅ");
                 return new Table();
             }
             default -> {
-                System.out.println("Такого вида мебели не существует");
+                System.out.println("РўР°РєРѕРіРѕ РІРёРґР° РјРµР±РµР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚");
                 return null;
             }
         }
