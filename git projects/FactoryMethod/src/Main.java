@@ -6,5 +6,7 @@ public class Main {
         furnitureFactory.create(FurnitureTypes.CHAIR);
         furnitureFactory.create(FurnitureTypes.TABLE);
 
+        
+
     }
 }
