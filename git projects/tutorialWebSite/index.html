@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css"> 
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <header class="main-header" id="header"> 
+        <div class="layers"> 
+            <div class="layer__header">
+            <div class="container">
+                <nav class="nav">
+                    <ul class="menu-list menu-left">
+                        <!-- <li class="menu-item">
+                            <a class="menu-item" href="#">Главная</a>
+                        </li> -->
+                        <li class="menu-item">
+                            <a class="menu-item" href="#albums">Альбомы</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item" href="#best_songs">Лучшее</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item" href="#participants">
+                                Участники</a>
+                        </li>
+
+                    </ul>
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo" class="logo-img">
+                    </div>
+                    <ul class="menu-list menu-right">
+                        <li class="menu-item">
+                            <a class="menu-item" href="https://en.wikipedia.org/wiki/Pentakill" target="_blank">О нас</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item" href="https://www.youtube.com/watch?v=vnwp6PHn9Kk&t=1019s" target="_blank">Концерт</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+            </div> 
+            
+            </div>
+            <p id="getTime">Время</p>
+        <div class="layer layers__base"  style="background-image: url(img/layers-base.png);"></div>
+        <div class="layer layers__middle" style="background-image: url(img/layers-middle.png);"></div>
+        <div class="layer layers__front" style="background-image: url(img/layers-front.png);"></div>
+        </div>
+        
+    </header>
+
+
+    <article class="albums_article" id="albums" style="background-image: url(img/albums-frame.png);">
+        <div class="albums">
+            <a id="first_album" href="https://music.youtube.com/playlist?list=OLAK5uy_lczGrhTxl7vhlHgQZCHtYdawjVy9jEXGU" target="_blank"><img src="img/first_album.jpg" alt="first_album"></a>
+            <a id="second_album" href="https://music.youtube.com/playlist?list=OLAK5uy_nh0EW0DvwI_B-rMjPqO4mK4PNs5ZfGQUo" target="_blank"><img src="img/second_album.jpg" alt="second_album"></a>
+            <a id="third_album" href="https://music.youtube.com/playlist?list=OLAK5uy_mCTF6rcODsXlztLVmzKygkoAejjHWhU1E" target="_blank"><img src="img/third_album.jpg" alt="third_album"></a>
+        </div>
+
+    </article>
+
+    <article id="best_songs" class="best_songs" style="background-image: url(img/best_songs.png);">
+        <table class="song_table" border="2">
+            <tr><th>Лучшие песни за все время</th></tr>
+            <tr>
+                <td>Песня</td>
+                <td>Количество прослушиваний</td>
+            </tr>
+            <tr>
+                <td>Lightbringer</td>
+                <td>65 180</td>
+            </tr>
+            <tr>
+                <td>Mortal Reminder</td>
+                <td>47 249</td>
+            </tr>
+            <tr>
+                <td>Deathfire Grasp</td>
+                <td>44 814</td>
+            </tr>
+            <tr>
+                <td>Lost Chapter</td>
+                <td>36 913</td>
+            </tr>
+            <tr>
+                <td>Last Whisper</td>
+                <td>30 176</td>
+            </tr>
+            <tr>
+                <td>Tear of the Goddess</td>
+                <td>24 749</td>
+            </tr>
+            <tr>
+                <td>Thornmail</td>
+                <td>24 644</td>
+            </tr>
+            <tr>
+                <td>Edge of Night</td>
+                <td>23 829</td>
+            </tr>
+            <tr>
+                <td>Ohmwrecker</td>
+                <td>22 789</td>
+            </tr>
+            <tr>
+                <td>Predator</td>
+                <td>21 318</td>
+            </tr>
+        </table>
+        
+    </article>
+
+    <article class="main-article" id="participants" style="background-image: url(img/second-frame.png);">
+        <div class="main-article__content">
+           <p class="participants"><a >Participants</a></p>
+        </div>
+        <div class="part_container">
+            <a href="#yorick"><img src="img/yorick.png" alt="#" class="yorick_img"></a>
+            <a href="#karthus"><img src="img/karthus.png" alt="#" class="karthus_img"></a>
+            <a href="#kayle"><img src="img/kayle.png" alt="#" class="kayle_img"></a>
+            <a href="#olaf"><img src="img/olaf.png" alt="#" class="olaf_img"></a>
+            <a href="#mordekaiser"><img src="img/mordekaiser.png" alt="#" class="mordekaider_img"></a>
+            <a href="#sona"><img src="img/sona.png" alt="#" class="sona_img"></a>
+            <a href="#viego"><img src="img/viego.png" alt="#" class="viego_img"></a>
+        </div>
+
+    </article>
+
+    <article class="yorick-info" id="yorick" style="background-image: url(img/kayle_backgroud.jpg);">
+        <div class="yorick_info">
+            Йорик, басист Pentakill:
+                Йорик был возрожден с бессмертной душой, полной хэви-метала, чтобы присоединиться к группе PENTAKILL и наводить шорох своей бас-гитарой. Еще он может призвать армию администраторов-упырей – незаменимый трюк для любого опытного исполнителя.
+                <br>Йорик из Pentakill "Lost Chapter":
+                Восславьте Йорика, фанатичного басиста! В одинаковой мере повидавший жизнь и смерть, он знает, какая судьба уготована каждому созданию. Его благородства стоит поостеречься.
+                <br>Устав от рутины, Йорик решил отдохнуть на выжженных 
+                солнцем пустошах Шуримы. Солнечный свет был ему в 
+                новинку: раньше он избегал его, боясь, что люди 
+                будут шарахаться от лица, к которому не привыкла даже родная
+                мать. Его уникальный бас с легкостью дробил 
+                песчаники Шуримы, но зачастую в процессе возникал 
+                и побочный эффект – из-за разжижения песков многие рабочие,
+                занимавшиеся раскопками удаленных гробниц, 
+                оказывались погребенными заживо. 
+                И все же эти несчастные были не прочь 
+                умереть – лишь бы перестать слушать человека, 
+                в компании с которым заскучал бы даже камень.
+                <br><br>
+                <i>"БОЛЬШЕ БАСОВ. СДЕЛАЙ БАС ГРОМЧЕ. СДЕЛАЙ. БАС. ГРОМЧЕ. ЕЩЕ... ЕЩЕ!" - Йорик, басист Pentakill
+                </i>
+
+                <br><br>
+
+            </div>
+            <div class="navigation">
+                <p><a id="home_button" href="#header">На главную</a></p>
+                <p><a id="participants_button" href="#participants">К участникам</a></p>
+            </div>
+            
+    </article>
+
+    <article class="karthus-info" id="karthus" style="background-image: url(img/karthus_background.jpg);">
+        <div class="karthus_info">
+            Картус, вокалист Pentakill <br>
+            Солист хэви-метал-группы Pentakill, Картус поет голосом падшего ангела из полированного 
+            хрома и динамита, нашпигованного взрывчаткой. Его вокал взрывает солнце в небесах, 
+            разжигая пламя в сердцах всех, кто его слышит. <br>
+            Картус из Pentakill "Lost Chapter" <br>
+            Восславьте же Картуса, голос судьбы и избранника Перпетуума! Его тягучие баллады о гибели напоминают, что всему есть конец. Хотя сам он намерен жить вечно.
+            <br>
+            Решив начать сольную карьеру, Картус отправился в Билджвотер, где зарабатывал на жизнь тем, что, облачившись в балахон, отпевал усопших во время панихид. Как ни странно, это положительно сказалось на жителях 
+            Билджвотера – люди начали лучше заботиться о своем здоровье, чтобы их семьям не пришлось проходить через такое испытание. Тогда Картус решил сменить сферу деятельности – он начал ездить по убогим злачным барам, где выступал на поминальных попойках по убитым пиратам, разбавляя морские песни шанти своими похоронными песнопениями.
+            <br><br>
+            <i>"ЧТО БЫ НИ СЛУЧИЛОСЬ, Я БУДУ ТВОЕЙ СМЕРТЬЮ." - Картус, вокалист Pentakill
+            </i>                
+        </div>
+        <div class="navigation">
+            <p><a id="home_button" href="#header">На главную</a></p>
+            <p><a id="participants_button" href="#participants">К участникам</a></p>
+        </div>
+    </article>
+
+    <article class="kayle-info" id="kayle" style="background-image: url(img/kayle_backgroud.jpg);">
+        <div class="kayle_info">
+            Кейл, вокалистка Pentakill
+            Когда группе PENTAKILL понадобилась вокалистка, небеса разверзлись, 
+            и на землю спустился настоящий ангел рока, вооруженный мечом-микрофоном 
+            и неугасающей страстью к хэви-металу.<br>
+            Кейл из Pentakill "Lost Chapter"<br>
+            Восславьте Кейл, вестницу горя! Преисполненная праведной силы, 
+            она несет справедливость и правосудие на ангельских крыльях. 
+            Если кто и может вдохновить воинов металла на бой, то это она.
+            <br>
+            Кейл – богиня-воительница в золотых доспехах из мира, раздираемого 
+            враждой, – прибыла в Рунтерру верхом на сверкающем змееподобном драконе. 
+            Она ищет союзников, которые помогли бы ей победить в эпической войне 
+            против дьявольских орд ее вероломной сестры. На планете Земля не нашлось 
+            ни одного воина, который отвечал бы ее требованиям, поэтому она 
+            отправилась на Рунтерру на поиски воинов металла. 
+            Музыка великих симфонических рок-опер выражает ее безграничную скорбь и 
+            пронзает сердца. В буквальном смысле слова.
+            <br><br>
+            <i>ПО ВАШИМ ЖИЛАМ ТЕЧЕТ РАСКАЛЕННАЯ ЛАВА, ЗАЛИТАЯ ТУДА ДЕРЗКИМИ БОГАМИ МЕТАЛЛА? 
+            ВЕДЬ ТОЛЬКО ТОГДА ВЫ ДОСТОЙНЫ МОЕГО ВРЕМЕНИ." - Кейл, вокалистка Pentakill
+            </i>
+        </div>
+        <div class="navigation">
+            <p><a id="home_button" href="#header">На главную</a></p>
+            <p><a id="participants_button" href="#participants">К участникам</a></p>
+        </div>
+    </article>
+    
+    <article class="olaf-info" id="olaf" style="background-image: url(img/kayle_backgroud.jpg);">
+        <div class="olaf_info">
+            Олаф, барабанщик Pentakill
+            Хорошие барабанщики обладают чувством ритма и длинным списком жертв; это проклятые викинги с ненасытной 
+            жаждой убийств. Олаф из группы PENTAKILL – очень, очень хороший барабанщик.<br>
+            Олаф из Pentakill "Lost Chapter"<br>
+            Волавьте же Олафа, громогласного варвара и избранника Стентора! 
+            Свирепее бури, разрушительнее землетрясения, он смеется в лицо 
+            врагам. Бой его барабанов сотрясает мир до самого основания.
+            <br>
+            Пережив свой последний, как он тогда думал, концерт, Олаф решил напиться 
+            до смерти самым крышесносным пойлом Рунтерры. Добравшись до трущоб Зауна, 
+            он начал накачивать себя крепчайшими коктейлями Сточных ям, хвастаться 
+            днями былой славы и задирать головорезов, усиленных химтеком. В конце 
+            концов его втянули в незаконные големные бои без правил. Встретившись 
+            лицом к лицу с химтековыми великанами, Олаф осознал, что его врожденный 
+            талант колотить по барабанам можно использовать и для того, чтобы крушить 
+            на запчасти механические создания.
+            <br><br>
+            <i>"ДОСТАНЬ МНЕ НОВУЮ ЧАЙНУ, А ЕЩЕ ТОМЫ, МАЛЫЙ, ДВЕ БОЧКИ, 
+                КАРДАН И КОВБЕЛЛ. В ОБЩЕМ, ВСЮ УСТАНОВКУ. СТАРАЯ СЛОМАЛАСЬ. 
+                СГОРЕЛА. ДА, Я ЕЕ ПОДЖЕГ!" - Олаф, барабанщик Pentakill
+            </i>
+        </div>
+        <div class="navigation">
+            <p><a id="home_button" href="#header">На главную</a></p>
+            <p><a id="participants_button" href="#participants">К участникам</a></p>
+        </div>
+    </article>
+
+    <article class="mordekaiser-info" id="mordekaiser" style="background-image: url(img/karthus_background.jpg);">
+        <div class="mordekaiser_info">
+            Мордекайзер, гитарист Pentakill
+            Огромный ведущий гитарист PENTAKILL, титан древнего мира Мордекайзер зажигает с яростью эпохи, потерянной во времени. Его гитара больше двухэтажного дома и просто переполнена хэви-металом; перед ее мощью не устоят даже боги.
+            <br>Мордекайзер из Pentakill "Lost Chapter"
+            Восславьте же Мордекайзера, мастера метала и избранника Дисгармония! Этому грозному великану нет равных во владении топором, ибо его лезвие всегда настигает цель.
+            <br>Когда на Мордекайзера рухнула гора, он счел это знаком от самих богов металла и решил, что его демоническая цель нести металл в массы выполнена, а уровень его металла достиг высшей точки. Мордекайзер знал, что однажды он переродится, но время шло, и он начал засыпать. Рушащаяся гора была дурным пиком из черного металла и проклятых камней. На ее вершине из скалы торчала блестящая обсидиановая рукоятка рычащего топора. Со временем это проклятое место обросло легендами – легендами, которые гласят, что тот, кто вытащит топор из горы, станет настоящим вестником новой эры металла.
+            <br><br>
+            <i>"МОЙ УСИЛОК НЕ ПРОСТО ЖЖЕТ НАПАЛМОМ – ОН, К ДЕМОНАМ, ВЗРЫВАЕТ МОЗГ, ТАК СКАЗАТЬ." - Мордекайзер, гитарист Pentakill
+            </i>
+            </div>
+            <div class="navigation">
+                <p><a id="home_button" href="#header">На главную</a></p>
+                <p><a id="participants_button" href="#participants">К участникам</a></p>
+            </div>
+    </article>
+
+    <article class="sona-info" id="sona" style="background-image: url(img/karthus_background.jpg);">
+        <div class="sona_info">
+            Сона, клавишник Pentakill
+            Никогда не говорите Соне из группы PENTAKILL, что клавишным не место в металле. Ее инструмент обмотан живой колючей проволокой и способен издавать настолько пронзительные крики, что другие, менее мелодичные музыкальные жанры, признают поражение, едва их услышав.<br>
+            Сона из Pentakill "Lost Chapter"<br>
+            Восславьте же Сону, молчаливого виртуоза! Душа творца способна изменить мир. Сона владеет гармоничными силами созидания и способна доказать, что все сотворенное можно вернуть в небытие.
+            <br>
+            Сона загорелась желанием создавать возвышенные симфонические рок-оперы и отправилась в путешествие по величайшим храмам мира (и за его пределами). Однако она так и не смогла найти подходящее место, акустика которого довела бы звучание ее музыки до громкости космических масштабов. Поэтому она присоединилась к проклятой команде Змеиного пира в их путешествии к вулканическим островам, где принялась сооружать свой остров – с присущей ей мелодичной брутальностью. Там она выпустила на волю музыку созидания. Ее мелодии были столь мощны, что разносились между мирами и топили целые континенты (из-за этого запланированный концерт на Атлантиде так и не состоялся).
+            <br><br>
+            <i>"...!" - Сона, клавишник Pentakill
+            </i>
+        </div>
+        <div class="navigation">
+            <p><a id="home_button" href="#header">На главную</a></p>
+            <p><a id="participants_button" href="#participants">К участникам</a></p>
+        </div>
+    </article>
+
+    <article class="viego-info" id="viego" style="background-image: url(img/viego_background.jpg);">
+        <div class="viego_info">
+            Лишь разбитое сердце знает, как звучит истинная скорбь. Тоска по совершенству, неведомая остальным.
+            Виего влачит свое существование среди пепла и теней, но знает, что мир должен быть озарен светом. Он заглядывает за серый горизонт и ищет новое звучание, дабы развеять тьму
+        </div>
+        <div class="navigation">
+            <p><a id="home_button_last" href="#header">На главную</a></p>
+            <p><a id="participants_button_last" href="#participants">К участникам</a></p>
+        </div>
+    </article>
+    
+                
+</body>
+</html>
+

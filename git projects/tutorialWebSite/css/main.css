@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+:root{
+  --index: calc(1vw + 1vh);
+}
+
+@font-face {
+  font-family: metal_f;
+  src: url(../fonts/MetalVengeance.ttf);
+}
+
+@font-face {
+  font-family: squealer_f;
+  src: url(../fonts/Squealer\ Embossed.otf);
+  font-weight: 900;
+}
+
+a{
+  text-decoration: none; 
+  color:white;
+
+}
+
+#getTime{
+  position: absolute;
+  z-index: 1; 
+  justify-content: center;
+  margin-top: 180px;
+  margin-left: 1450px;
+  color:white;
+  font-size: 20px;
+  transform: translate3d(0, calc(var(--scrollTop) / 1.61) , 0);
+}
+
+.logo{
+  
+  .logo-img{
+    align-items: center;
+    height: 150px;
+    padding-right: 50px;
+  }
+  
+}
+
+.container{
+  position: relative;
+  max-width: 1600px;
+  width: 1400px; 
+  padding: 10px;
+  gap: 0 40px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 150px;
+}
+
+.menu-list{
+  display: flex;
+  list-style-type: none;
+  gap: 0 40px;
+}
+
+
+
+body{
+  background-color: #010101;
+  color:#F9E1B9;    
+  line-height: 1.5;
+} 
+
+.main-header{
+  position: relative; 
+  /* display: inline; */
+}  
+
+.main-header::after{
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: calc(var(--index) * 26);
+  background-size: cover;
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: calc(var(--index) * -7); 
+
+}
+
+.layers{
+  height: 100vh;
+  display: flex;
+  justify-content: center;  
+  overflow: hidden; 
+  position: relative;  
+}
+
+.layer{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 2;
+}
+
+.layers__base{
+  
+  transform: translate3d(0, calc(var(--scrollTop) / 1.61) , 0);
+  z-index: 0;
+}
+
+.layers__middle{
+  transform: translate3d(0, calc(var(--scrollTop) / 2.7) , 0);
+
+}
+
+.layers__front{
+  transform: translate3d(0, calc(var(--scrollTop) / 8.78) , 0);
+}
+
+.layer__header{
+  text-align: center;
+  z-index: 4;
+  transform: translate3d(0, calc(var(--scrollTop) / 1.3) , 0);
+  will-change: transform;
+  /* -webkit-text-stroke: #010101 1.5px; */
+  font-size: 27px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 40px #8D6D29;
+}
+
+.albums_article{
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  
+}
+
+.albums{
+  display: flex;
+ 
+  width: 1400px;
+  height: 500px;
+  justify-content: space-between;
+}
+
+#first_album{
+  transform: scale(0.635);
+  padding-top: 180px;
+  margin-left: -80px;
+}
+#second_album{
+  transform: scale(0.925);
+  padding-top: 200px;
+  padding-left: 60px;
+}
+#third_album{
+  transform: scale(0.18);
+  margin-left: -910px;
+}
+
+.best_songs{
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.song_table{
+ 
+  margin-left: 180px;
+  width: 1500px;
+  height: 600px;
+  background-color:rgba(64, 64, 64, 0.3);
+  border-spacing: 10px 5px;
+  text-align: left;
+}
+
+
+.main-article{
+
+  background-position: center;
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-article__content{
+  padding-top: 20px;
+  height: 50px;
+
+}
+p{
+  font-size: 40px;
+  font-family: metal_f;
+  z-index: 2;
+}
+
+ .part_container{
+  display: flex;
+  margin-top: -35px;
+  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  transform: scale(0.65);
+  justify-content: flex-start;
+} 
+
+#home_button{
+  font-size: 30px;
+  color: darkkhaki;
+}
+#participants_button{
+  font-size: 30px;
+  color: darkkhaki;
+}
+
+#home_button_last{
+  color: rgb(80, 27, 80);
+}
+#participants_button_last{
+  color: rgb(80, 27, 80);
+}
+.navigation{
+  display: flex;
+  margin-top: 800px;
+  margin-left: 400px;
+  width: 1000px;
+  justify-content: space-between;
+}
+
+.yorick-info{
+  /* background-position: center center; */
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.yorick_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 650px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 33px;
+  margin-top: 100px;
+}
+
+.karthus-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+  
+}
+
+.karthus_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 600px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 30px;
+  margin-top: 90px;
+}
+
+.kayle-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.kayle_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 650px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 32px;
+  margin-top: 90px;
+}
+
+.olaf-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.olaf_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 650px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 31px;
+  margin-top: 90px;
+}
+
+.mordekaiser-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.mordekaiser_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 700px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 33px;
+  margin-top: 90px;
+}
+
+.sona-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.sona_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 700px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 31px;
+  margin-top: 90px;
+}
+
+.viego-info{
+  height: 100vh;
+  background-size:cover;
+  display: flex;
+  position: relative;
+}
+
+.viego_info{
+  position: absolute;
+  color:white;
+  margin-left: 150px;
+  height: 200px;
+  width: 1600px;
+  background: rgba(64, 64, 64, 0.57);
+  font-size: 33px;
+  margin-top: 120px;
+}
